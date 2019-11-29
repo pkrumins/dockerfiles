@@ -7,7 +7,7 @@ RUN set -x && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     keepass2
 
-# Set timezone 
+# Set timezone
 RUN set -x && \
     ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
