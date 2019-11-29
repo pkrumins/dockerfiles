@@ -1,0 +1,32 @@
+# Base docker image
+FROM ubuntu:latest
+
+# Install flameshot
+RUN set -x && \
+    apt-get update && \
+    apt-get install -y flameshot
+
+# Cleanup apt
+RUN set -x && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Add app group and user
+RUN set -x && \
+    groupadd -g 1000 app && \
+    useradd -m -s /bin/bash -u 1000 -g app -G video app
+
+# Create downloads directory
+RUN set -x && \
+    mkdir -p /home/app/Downloads && \
+    chown app:app /home/app/Downloads
+
+# Run the installed app as a non-privileged app user
+USER app
+
+# Set working directory to Downloads
+WORKDIR /home/app/Downloads
+
+# Autorun flameshot
+ENTRYPOINT [ "flameshot" ]
+
