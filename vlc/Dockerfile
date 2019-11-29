@@ -17,9 +17,12 @@ RUN set -x && \
 # Add app user
 RUN set -x && \
     groupadd -g 1000 app && \
-    useradd -m -s /bin/bash -u 1000 -g app -G audio,video app && \
+    useradd -m -s /bin/bash -u 1000 -g app -G audio,video app
+
+# Create downloads directory
+RUN set -x && \
     mkdir -p /home/app/Downloads && \
-    chown -R app:app /home/app
+    chown app:app /home/app/Downloads
 
 # Run vlc as a non-privileged user
 USER app
