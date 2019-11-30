@@ -4,10 +4,12 @@ FROM ubuntu:latest
 # Install pinta
 RUN set -x && \
     apt-get update && \
-    apt-get install -y software-properties-common && \
-    apt-add-repository ppa:pinta-maintainers/pinta-stable && \
-    apt-get update && \
-    apt-get install -y pinta
+    DEBIAN_FRONTEND=noninteractive apt-get install -y pinta
+
+# Set timezone
+RUN set -x && \
+    ln -fs /usr/share/zoneinfo/UTC /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata
 
 # Cleanup apt
 RUN set -x && \
