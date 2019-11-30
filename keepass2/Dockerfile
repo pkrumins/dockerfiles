@@ -9,7 +9,7 @@ RUN set -x && \
 
 # Set timezone
 RUN set -x && \
-    ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && \
+    ln -fs /usr/share/zoneinfo/UTC /etc/localtime && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
 # Cleanup apt
