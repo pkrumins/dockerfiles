@@ -14,7 +14,6 @@ RUN set -x && \
 
 # Cleanup apt
 RUN set -x && \
-    apt-get purge --auto-remove -y curl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
