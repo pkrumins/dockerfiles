@@ -10,6 +10,7 @@ RUN set -x && \
 RUN set -x && \
     apt-get update && \
     apt-get install -y \
+        wget \
         ninja-build \
         build-essential \
         debhelper \
@@ -42,25 +43,15 @@ RUN set -x && \
         libudev-dev \
         libdbus-glib-1-dev \
         uuid-dev \
-        libgstreamer1.0-dev \
-        libgstreamer-plugins-base1.0-dev \
-        libfaad2 \
-        libfaad-dev \
-        libfaac0 \
-        libfaac-dev \
         libgss-dev \
         libgss3 \
         libkrb5-dev \
-        libkrb5-3 \
-        ffmpeg \
-        libavcodec-dev
+        libkrb5-3
 
 RUN set -x && \
     mkdir /tmp/build-freerdp
 
 WORKDIR /tmp/build-freerdp
-
-RUN apt-get install wget
 
 RUN set -x && \
     wget https://github.com/FreeRDP/FreeRDP/archive/2.0.0-rc4.tar.gz -O freerdp-2.0.0-rc4.tar.gz && \
@@ -74,15 +65,15 @@ RUN set -x && \
         -DCHANNEL_URBDRC=ON \
         -DWITH_MANPAGES=OFF \
         -DWITH_WAYLAND=OFF \
-        -DWITH_JPEG=ON \
-        -DWITH_FFMPEG=ON \
-        -DWITH_DSP_FFMPEG=ON \
-        -DWITHX264=ON \
+        -DWITH_X264=OFF \
         -DWITH_CUPS=OFF \
+        -DWITH_FFMPEG=OFF \
+        -DWITH_DSP_FFMPEG=OFF \
+        -DWITH_FAAC=OFF \
+        -DWITH_FAAD2=OFF \
+        -DWITH_JPEG=ON \
         -DWITH_ALSA=ON \
         -DWITH_PULSE=ON \
-        -DWITH_FAAC=ON \
-        -DWITH_FAAD2=ON \
         -DWITH_GSM=ON \
         -DWITH_GSSAPI=ON \
         . && \
