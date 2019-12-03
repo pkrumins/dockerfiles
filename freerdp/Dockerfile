@@ -86,7 +86,7 @@ RUN set -x && \
 
 # Cleanup build
 RUN set -x && \
-    rm -rf /tmp/build-freerdp-v2.0.0-rc4
+    rm -rf /tmp/build-freerdp
 
 # Run the installed app as a non-privileged app user
 USER app
