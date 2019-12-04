@@ -1,5 +1,5 @@
 # Base docker image
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 # Add app group and user
 RUN set -x && \
