@@ -28,8 +28,6 @@ RUN set -x && \
 
 WORKDIR /tmp/build-keepassxc
 
-RUN apt-get install wget
-
 RUN set -x && \
     wget 'https://github.com/keepassxreboot/keepassxc/releases/download/2.5.1/keepassxc-2.5.1-src.tar.xz'
 
