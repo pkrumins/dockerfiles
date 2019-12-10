@@ -9,13 +9,13 @@ RUN set -x && \
     curl \
     wget \
     netcat \
-    whois
+    whois \
+    gcc \
+    g++ \
+    make \
+    vim \
+    less
  
-# Cleanup apt
-RUN set -x && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 # Add app user
 RUN set -x && \
     groupadd -g 1000 app && \
