@@ -65,6 +65,9 @@ RUN set -x && \
 RUN set -x && \
     echo "app ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Copy service startup script
 COPY start.sh /start.sh
 
