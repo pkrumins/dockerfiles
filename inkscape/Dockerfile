@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 RUN set -x && \
     apt-get update && \
     apt-get install -y software-properties-common && \
-    add-apt-repository ppa:inkscape.dev/stable && \
+    apt-add-repository ppa:inkscape.dev/stable && \
     apt-get update
 
 RUN set -x && \
