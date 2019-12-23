@@ -6,11 +6,12 @@ RUN set -x && \
     groupadd -g 1000 app && \
     useradd -m -s /bin/bash -u 1000 -G sudo -g app app
 
-# Install pip
+# Install pip and ffmpeg
 RUN set -x && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        python3-pip
+        python3-pip \
+        ffmpeg
 
 # Cleanup apt
 RUN set -x && \
