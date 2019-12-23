@@ -17,7 +17,8 @@ RUN set -x && \
         g++ \
         make \
         vim \
-        less
+        less \
+        sqlite3
 
 # Install nginx, php
 RUN set -x && \
@@ -25,7 +26,8 @@ RUN set -x && \
         nginx \
         php-fpm \
         php-mbstring \
-        php-curl
+        php-curl \
+        php-sqlite3
 
 # Install mariadb
 RUN set -x && \
