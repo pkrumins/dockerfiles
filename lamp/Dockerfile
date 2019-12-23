@@ -27,7 +27,8 @@ RUN set -x && \
         php-fpm \
         php-mbstring \
         php-curl \
-        php-sqlite3
+        php-sqlite3 \
+        php-mysql
 
 # Install mariadb
 RUN set -x && \
