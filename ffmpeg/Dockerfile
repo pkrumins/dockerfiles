@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 RUN set -x && \
     apt-get update && \
     apt-get install -y software-properties-common && \
-    add-apt-repository ppa:jonathonf/ffmpeg-4 && \
+    apt-add-repository ppa:jonathonf/ffmpeg-4 && \
     apt-get update && \
     apt-get install -y ffmpeg
 
