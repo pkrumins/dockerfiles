@@ -50,7 +50,7 @@ RUN set -x && \
 USER app
 
 # Change working directory to home directory
-WORKDIR /home/app
+WORKDIR /home/app/Downloads
 
 # Autorun chrome
 ENTRYPOINT [ "google-chrome" ]
