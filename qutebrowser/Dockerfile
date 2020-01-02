@@ -19,7 +19,8 @@ RUN set -x && \
         python3-pyqt5.qtopengl \
         python3-pyqt5.qtsql \
         python3-pyqt5.qtquick \
-        python3-pip
+        python3-pip \
+        libpulse0
 
 # Cleanup apt
 RUN set -x && \
