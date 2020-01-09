@@ -14,7 +14,7 @@ RUN set -x && \
 # Add app user
 RUN set -x && \
     groupadd -g 1000 app && \
-    useradd -m -s /bin/bash -u 1000 -g app app
+    useradd -m -s /bin/bash -u 1000 -g app -G video app
 
 # Create downloads directory
 RUN set -x && \
