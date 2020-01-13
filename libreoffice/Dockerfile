@@ -17,16 +17,16 @@ RUN set -x && \
     groupadd -g 1000 app && \
     useradd -m -s /bin/bash -u 1000 -g app app
 
-# Create docs directory
+# Create Downloads directory
 RUN set -x && \
-    mkdir -p /home/app/Docs && \
-    chown app:app /home/app/Docs
+    mkdir -p /home/app/Downloads && \
+    chown app:app /home/app/Downloads
 
 # Run libreoffice as a non-privileged user
 USER app
 
 # Change working directory to docs directory
-WORKDIR /home/app/Docs
+WORKDIR /home/app/Downloads
 
 # Autorun libreoffice
 ENTRYPOINT [ "libreoffice" ]
