@@ -26,8 +26,8 @@ RUN set -x && \
 # Run vlc as a non-privileged user
 USER app
 
-# Change working directory to home directory
-WORKDIR /home/app
+# Change working directory to Downloads directory
+WORKDIR /home/app/Downloads
 
 # Create vlc config dir
 RUN set -x && \
@@ -43,6 +43,5 @@ RUN set -x && \
     echo "status-bar-visible=true" >> ~/.config/vlc/vlc-qt-interface.conf
 
 # Autorun vlc
-ENTRYPOINT [ "vlc" ]
-CMD [ "--no-qt-privacy-ask" ]
+ENTRYPOINT [ "vlc", "--no-qt-privacy-ask" ]
 
