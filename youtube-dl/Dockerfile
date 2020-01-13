@@ -36,7 +36,7 @@ RUN set -x && \
 ENV PATH=$PATH:/home/app/.local/bin
 
 # Change working directory to downloads directory
-WORKDIR /home/app/YTD
+WORKDIR /home/app/Downloads
 
 # Run youtube-dl
 ENTRYPOINT [ "youtube-dl" ]
