@@ -21,16 +21,18 @@ RUN set -x && \
 # Enable 32-bit architecture
 RUN set -x && dpkg --add-architecture i386
 
-# Install wine
+# Install wine and winetricks
 RUN set -x && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        winehq-stable
+        winehq-stable \
+        winetricks
 
 # Install windows utilities
 RUN set -x && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        p7zip-full
+        p7zip-full \
+        winbind
 
 # Cleanup apt
 RUN set -x && \
