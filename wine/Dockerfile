@@ -27,6 +27,11 @@ RUN set -x && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         winehq-stable
 
+# Install windows utilities
+RUN set -x && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        p7zip-full
+
 # Cleanup apt
 RUN set -x && \
     apt-get clean && \
