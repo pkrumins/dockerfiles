@@ -85,7 +85,7 @@ RUN set -x && \
 RUN set -x && \
     cp meson-private/girara-gtk3.pc /usr/share/pkgconfig
 
-RUN bash -c "echo /home/app/installs/girara-v0.3.4/lib/x86_64-linux-gnu > /etc/ld.so.conf"
+RUN bash -c "echo /home/app/installs/girara-v0.3.4/lib/x86_64-linux-gnu >> /etc/ld.so.conf"
 
 RUN set -x && ldconfig
 
