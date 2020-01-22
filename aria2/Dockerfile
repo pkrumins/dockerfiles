@@ -50,7 +50,7 @@ RUN set -x && \
 USER app
 
 # Set working directory
-WORKDIR /home/app/Downloads
+WORKDIR /home/app/Downloads/aria2
 
 # Set application path
 ENV PATH="$PATH:/home/app/installs/aria2-v1.35.0/bin"
