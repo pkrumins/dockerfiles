@@ -13,6 +13,7 @@ RUN set -x && \
     gcc \
     g++ \
     make \
+    pkg-config \
     vim \
     less
  
