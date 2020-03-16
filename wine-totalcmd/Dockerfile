@@ -1,5 +1,5 @@
 # Base docker image
-FROM ubuntu:18.04
+FROM ubuntu:19.10
 
 # Install utilities
 RUN set -x && \
@@ -16,7 +16,7 @@ RUN set -x && apt-key add /tmp/winehq.key
 
 # Add winehq repository
 RUN set -x && \
-    apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+    apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan main'
 
 # Enable 32-bit architecture
 RUN set -x && dpkg --add-architecture i386
